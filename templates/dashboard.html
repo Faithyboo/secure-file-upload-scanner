@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4 col-lg-2">
+        <div class="card stat-card">
+            <div class="card-body"><h6>Total Scans</h6><p class="display-6">{{ stats.total }}</p></div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+        <div class="card stat-card">
+            <div class="card-body"><h6>Safe</h6><p class="display-6 text-success">{{ stats.safe }}</p></div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+        <div class="card stat-card">
+            <div class="card-body"><h6>Warning</h6><p class="display-6 text-warning">{{ stats.warning }}</p></div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+        <div class="card stat-card">
+            <div class="card-body"><h6>Blocked</h6><p class="display-6 text-danger">{{ stats.blocked }}</p></div>
+        </div>
+    </div>
+    <div class="col-md-8 col-lg-4">
+        <div class="card stat-card">
+            <div class="card-body"><h6>Most Common Type</h6><p class="display-6">{{ stats.most_common_type }}</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex gap-2">
+    <a href="{{ url_for('history') }}" class="btn btn-primary">View History</a>
+    <a href="{{ url_for('export_csv') }}" class="btn btn-outline-success">Export CSV</a>
+</div>
+{% endblock %}

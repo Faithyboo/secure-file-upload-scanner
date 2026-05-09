@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-5 mb-4 rounded-3 hero">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">Secure File Upload Scanner</h1>
+        <p class="col-md-10 fs-5">
+            Upload files and automatically validate extension, size, suspicious names, and double extensions.
+            The system stores hashes, scan results, and admin history for security monitoring.
+        </p>
+        <div class="d-flex gap-2">
+            <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg">Upload File</a>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary btn-lg">Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Validation Rules</h5>
+                <p class="card-text">Allowed/blocked extensions, size checks, suspicious filename checks, and double extension detection.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Hash Tracking</h5>
+                <p class="card-text">Each file receives a SHA-256 hash to support auditing and integrity checks.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Admin Dashboard</h5>
+                <p class="card-text">View scan statistics, history, export CSV reports, and clean old records.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

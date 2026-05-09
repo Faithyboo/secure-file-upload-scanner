@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-3">Scan Result</h2>
+
+{% set badge = 'success' if result.status == 'Safe' else ('warning' if result.status == 'Warning' else 'danger') %}
+<div class="alert alert-{{ badge }}">
+    <strong>Status:</strong> {{ result.status }} <br>
+    <strong>Reason:</strong> {{ result.reason }}
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered align-middle">
+        <tr><th>Original Filename</th><td>{{ result.original_filename }}</td></tr>
+        <tr><th>Saved Filename</th><td>{{ result.saved_filename }}</td></tr>
+        <tr><th>Extension</th><td>{{ result.extension }}</td></tr>
+        <tr><th>File Size</th><td>{{ result.file_size }} bytes</td></tr>
+        <tr><th>SHA-256 Hash</th><td class="hash-cell">{{ result.file_hash }}</td></tr>
+        <tr><th>Scan Date</th><td>{{ result.scan_date }}</td></tr>
+    </table>
+</div>
+
+<a href="{{ url_for('upload') }}" class="btn btn-primary">Scan Another File</a>
+{% endblock %}

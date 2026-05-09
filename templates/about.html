@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>About This Project</h2>
+<p>
+    This Secure File Upload Scanner is built with Python Flask as part of a cyber security software
+    engineering internship project. It validates uploads, stores scan records, supports admin controls,
+    and provides dashboard analytics for monitoring file upload security.
+</p>
+<ul>
+    <li>Validation: extension, size, suspicious names, double extension checks</li>
+    <li>Integrity: SHA-256 hash generation and storage</li>
+    <li>Administration: login, dashboard, history, delete, export CSV</li>
+    <li>User experience: responsive Bootstrap interface with dark mode toggle</li>
+</ul>
+{% endblock %}
