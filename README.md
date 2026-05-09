@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Secure File Upload Scanner
 
 Flask-based secure file upload scanner for a software engineering internship project.
@@ -34,3 +35,7 @@ Change these immediately in production.
 ## Deployment (Render)
 
 - Set start command to: `gunicorn app:app`
+=======
+# secure-file-upload-scanner
+Secure File Upload Scanner using Django
+>>>>>>> 6316a07af9aa446a1cfddde8ef40006a4de83220
