@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h1 class="h3 mb-3">Scan a file</h1>
+        <p class="text-muted">Upload a supported file and run static safety checks (extension + filename heuristics) with SHA-256 hashing.</p>
+        <form method="post" action="{% url 'scan' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label class="form-label" for="scanFile">Choose file</label>
+            <input class="form-control" id="scanFile" type="file" name="file" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Scan File</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

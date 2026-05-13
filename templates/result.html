@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-9">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="h4 mb-3">Scan result</h2>
+        <div class="mb-3">
+          <span class="badge {% if record.status == 'SAFE' %}text-bg-success{% elif record.status == 'WARNING' %}text-bg-warning{% else %}text-bg-danger{% endif %}">
+            {{ record.status }}
+          </span>
+        </div>
+        <ul class="list-group mb-3">
+          <li class="list-group-item"><strong>File:</strong> {{ record.original_filename }}</li>
+          <li class="list-group-item"><strong>Reason:</strong> {{ record.reason }}</li>
+          <li class="list-group-item"><strong>SHA-256:</strong> <code>{{ record.file_hash }}</code></li>
+          <li class="list-group-item"><strong>Size:</strong> {{ record.file_size }} bytes</li>
+          <li class="list-group-item"><strong>Extension:</strong> {{ record.extension }}</li>
+        </ul>
+        <a class="btn btn-outline-primary" href="{% url 'home' %}">Scan another file</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

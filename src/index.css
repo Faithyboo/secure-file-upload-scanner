@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-bg: var(--app-bg);
+  --color-app-surface: var(--app-surface);
+  --color-app-border: var(--app-border);
+  --color-app-text: var(--app-text);
+  --color-app-text-muted: var(--app-text-muted);
+  
+  --color-status-safe: var(--status-safe);
+  --color-status-safe-bg: var(--status-safe-bg);
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-bg: var(--status-warning-bg);
+  --color-status-blocked: var(--status-blocked);
+  --color-status-blocked-bg: var(--status-blocked-bg);
+}
+
+:root {
+  --app-bg: #f3f4f6;
+  --app-surface: #ffffff;
+  --app-border: #e5e7eb;
+  --app-text: #111827;
+  --app-text-muted: #4b5563;
+
+  --status-safe: #059669;
+  --status-safe-bg: #ecfdf5;
+  --status-warning: #d97706;
+  --status-warning-bg: #fffbeb;
+  --status-blocked: #dc2626;
+  --status-blocked-bg: #fef2f2;
+}
+
+.dark {
+  --app-bg: #05070a;
+  --app-surface: #0a0e14;
+  --app-border: #1e293b;
+  --app-text: #e2e8f0;
+  --app-text-muted: #94a3b8;
+
+  --status-safe: #34d399;
+  --status-safe-bg: rgba(52, 211, 153, 0.1);
+  --status-warning: #fbbf24;
+  --status-warning-bg: rgba(251, 191, 36, 0.1);
+  --status-blocked: #f87171;
+  --status-blocked-bg: rgba(248, 113, 113, 0.1);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SecureScan v2.4",
+  "description": "Vigilant Expert Malware Sandbox - Secure file integrity validation engine with SHA-256 integrity checksumming and extension filtering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

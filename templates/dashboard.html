@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="h3 mb-4">Dashboard</h1>
+<div class="row g-3">
+  <div class="col-6 col-lg-3">
+    <div class="card card-stat"><div class="card-body"><h6>Total</h6><p>{{ total }}</p></div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card card-stat"><div class="card-body"><h6>Safe</h6><p>{{ safe }}</p></div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card card-stat"><div class="card-body"><h6>Warning</h6><p>{{ warning }}</p></div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card card-stat"><div class="card-body"><h6>Blocked</h6><p>{{ blocked }}</p></div></div>
+  </div>
+</div>
+<div class="mt-4 alert alert-info">Most common extension: <strong>{{ most_common|default:"N/A" }}</strong></div>
+{% endblock %}

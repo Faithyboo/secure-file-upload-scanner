@@ -1,0 +1,70 @@
+:root {
+  --deep-green: #0b3d2e;
+  --accent-orange: #ff7a18;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+}
+
+[data-bs-theme="dark"] {
+  --bg: #0b1220;
+  --card-bg: #0f1b2d;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+#siteNavbar {
+  background-color: var(--deep-green) !important;
+}
+
+
+.btn-primary {
+  background-color: var(--accent-orange) !important;
+  border-color: var(--accent-orange) !important;
+}
+
+.btn-outline-warning {
+  color: var(--accent-orange) !important;
+  border-color: var(--accent-orange) !important;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-color: rgba(0,0,0,0.06);
+}
+
+[data-bs-theme="dark"] .card {
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* Make Bootstrap components readable in dark mode */
+[data-bs-theme="dark"] .text-muted {
+  color: var(--muted) !important;
+}
+
+[data-bs-theme="dark"] .table {
+  color: var(--text);
+}
+
+[data-bs-theme="dark"] .table thead th {
+  color: var(--text);
+}
+
+
+.card-stat .card-body h6 {
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.card-stat .card-body p {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+

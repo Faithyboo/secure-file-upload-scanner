@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h3 m-0">Scan history</h1>
+  <div class="d-flex gap-2">
+    <a class="btn btn-outline-success btn-sm" href="{% url 'export_csv' %}">Export CSV</a>
+    <form method="post" action="{% url 'clear_history' %}">
+      {% csrf_token %}
+      <button class="btn btn-outline-danger btn-sm" type="submit">Clear all</button>
+    </form>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Filename</th>
+        <th>Status</th>
+        <th>Hash</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in records %}
+      <tr>
+        <td>{{ record.original_filename }}</td>
+        <td>
+          <span class="badge {% if record.status == 'SAFE' %}text-bg-success{% elif record.status == 'WARNING' %}text-bg-warning{% else %}text-bg-danger{% endif %}">
+            {{ record.status }}
+          </span>
+        </td>
+        <td><code>{{ record.file_hash|slice:":12" }}...</code></td>
+        <td>{{ record.scan_date }}</td>
+        <td class="text-end">
+          <form method="post" action="{% url 'delete_record' record.id %}">
+            {% csrf_token %}
+            <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5" class="text-center text-muted py-4">No scan records yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
